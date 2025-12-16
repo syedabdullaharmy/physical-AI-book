@@ -28,7 +28,8 @@ class Settings(BaseSettings):
     @property
     def DATABASE_URL(self) -> str:
         if self.USE_SQLITE:
-            return "sqlite+aiosqlite:///./test.db"
+            # On Vercel, usage of absolute path /tmp is required for writing
+            return "sqlite+aiosqlite:////tmp/test.db"
         return f"postgresql+asyncpg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.POSTGRES_SERVER}:{self.POSTGRES_PORT}/{self.POSTGRES_DB}"
 
     class Config:
