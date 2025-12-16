@@ -1,7 +1,11 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 // API Configuration
-export const API_URL = (typeof process !== 'undefined' && process.env?.NEXT_PUBLIC_API_URL) || 'http://localhost:8000/api/v1';
+// Priority: 1. REACT_APP_API_URL, 2. Production default (/api/v1), 3. Development default
+export const API_URL =
+    (typeof window !== 'undefined' && (window as any).REACT_APP_API_URL) ||
+    (typeof process !== 'undefined' && process.env?.REACT_APP_API_URL) ||
+    (process.env.NODE_ENV === 'production' ? '/api/v1' : 'http://localhost:8000/api/v1');
 
 interface User {
     id: string;

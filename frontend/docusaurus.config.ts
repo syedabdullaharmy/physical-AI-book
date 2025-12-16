@@ -18,14 +18,14 @@ const config: Config = {
   url: 'https://yourusername.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/book/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'yourusername', // Your GitHub org/user name.
   projectName: 'book', // Your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // internationalization support (future: Urdu)
@@ -41,9 +41,9 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: 'docs',
-          editUrl: 'https://github.com/',
-          showLastUpdateTime: true,
-          showLastUpdateAuthor: true,
+          editUrl: 'https://github.com/syedabdullaharmy/physical-AI-book/tree/main/frontend/',
+          showLastUpdateTime: false,
+          showLastUpdateAuthor: false,
         },
         blog: false, // Disable blog for textbook
         theme: {

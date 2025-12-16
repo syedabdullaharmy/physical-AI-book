@@ -18,7 +18,7 @@ export default function Login() {
     // Redirect if already logged in
     React.useEffect(() => {
         if (user && !authLoading) {
-            history.push('/book/');
+            history.push('/');
         }
     }, [user, authLoading, history]);
 
@@ -45,7 +45,7 @@ export default function Login() {
 
             const data = await response.json();
             login(data.access_token);
-            history.push('/book/');
+            history.push('/');
         } catch (err: any) {
             setError(err.message || 'An error occurred');
         } finally {
@@ -177,7 +177,7 @@ export default function Login() {
 
                                 <div className="mt-6 text-center">
                                     <Link
-                                        to="/book/register"
+                                        to="/register"
                                         className="font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 hover:underline transition-all"
                                     >
                                         Create an account

@@ -54,7 +54,7 @@ export default function Register() {
             }
 
             // On success, redirect to login
-            history.push('/book/login');
+            history.push('/login');
         } catch (err: any) {
             setError(err.message || 'An error occurred');
         } finally {
@@ -262,7 +262,7 @@ export default function Register() {
 
                                 <div className="mt-6 text-center">
                                     <Link
-                                        to="/book/login"
+                                        to="/login"
                                         className="font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 hover:underline transition-all"
                                     >
                                         Sign in

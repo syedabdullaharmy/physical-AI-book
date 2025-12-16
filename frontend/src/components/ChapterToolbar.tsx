@@ -187,7 +187,7 @@ export default function ChapterToolbar({ chapterId, chapterTitle }: ChapterToolb
                     </div>
                 ) : (
                     <div className={styles.loginPrompt}>
-                        <a href="/book/login" className={styles.loginLink}>
+                        <a href="/login" className={styles.loginLink}>
                             Login to translate and personalize content
                         </a>
                     </div>
