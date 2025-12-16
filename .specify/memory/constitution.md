@@ -1,55 +1,192 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Project Constitution: Physical AI & Humanoid Robotics Textbook
+
+## Project Identity
+
+**Name:** Physical AI & Humanoid Robotics Interactive Textbook  
+**Purpose:** Create a comprehensive, interactive textbook with RAG chatbot for teaching Physical AI & Humanoid Robotics course  
+**Target Audience:** Students learning embodied AI, robotics, and humanoid systems
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### 1. Educational Excellence
+- Content must be technically accurate and pedagogically sound
+- Complex concepts explained progressively from fundamentals to advanced
+- Include practical examples, code snippets, and real-world applications
+- Support multiple learning levels (beginner to advanced)
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### 2. Technology Stack Standards
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+#### Frontend
+- **Framework:** Docusaurus (latest stable version)
+- **Language:** TypeScript for type safety
+- **Styling:** Tailwind CSS with custom theme
+- **Components:** React functional components with hooks
+- **State Management:** React Context API for global state
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+#### Backend
+- **Framework:** FastAPI (Python 3.9+)
+- **Database:** Neon Serverless Postgres
+- **Vector Storage:** Qdrant Cloud Free Tier
+- **AI Model:** Mistral AI API (MANDATORY - NOT OpenAI)
+- **Authentication:** Better-Auth
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+#### Deployment
+- **Frontend:** GitHub Pages
+- **Backend:** Vercel or Railway
+- **CI/CD:** GitHub Actions
 
-### [PRINCIPLE_6_NAME]
+### 3. Code Quality Standards
 
+#### All Code Must:
+- Follow language-specific best practices (PEP 8 for Python, Airbnb style for JavaScript/TypeScript)
+- Include comprehensive error handling with specific error messages
+- Have logging at appropriate levels (DEBUG, INFO, WARNING, ERROR)
+- Be type-annotated (TypeScript types, Python type hints)
+- Include JSDoc/docstring comments for all public functions
+- Pass linting (ESLint, Pylint) with no errors
 
-[PRINCIPLE__DESCRIPTION]
+#### Testing Requirements:
+- Unit tests for all business logic (>80% coverage)
+- Integration tests for API endpoints
+- E2E tests for critical user flows
+- Test files co-located with source files
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### 4. Performance Requirements
+- **Page Load:** < 3 seconds (initial load)
+- **Time to Interactive:** < 5 seconds
+- **API Response:** < 500ms (95th percentile)
+- **RAG Query:** < 3 seconds for complete response
+- **Mobile Responsive:** All features work on mobile devices
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### 5. Security Standards
+- **Never** commit API keys, secrets, or credentials
+- All sensitive data in environment variables
+- Use `.env.example` with placeholder values
+- Implement rate limiting on all API endpoints
+- Sanitize all user inputs
+- Use HTTPS for all production endpoints
+- Implement proper CORS configuration
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### 6. Architecture Principles
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+#### Separation of Concerns:
+- Frontend handles only presentation and user interaction
+- Backend handles business logic, data access, and AI integration
+- Clear API contracts between layers
+
+#### Modularity:
+- Components should be small, focused, and reusable
+- Services should have single responsibility
+- Avoid tight coupling between modules
+
+#### Scalability:
+- Design for horizontal scaling (stateless services)
+- Use caching strategically (Redis for frequent queries)
+- Optimize database queries with proper indexing
+
+### 7. Documentation Requirements
+
+#### Code Documentation:
+- README.md in every major directory
+- API documentation using OpenAPI/Swagger
+- Component prop documentation
+- Setup instructions with prerequisites
+
+#### User Documentation:
+- Installation guide
+- User manual for all features
+- Troubleshooting section
+- FAQ
+
+### 8. Git Workflow
+
+#### Commit Standards:
+- Conventional commits format: `type(scope): description`
+- Types: feat, fix, docs, style, refactor, test, chore
+- Include ticket/issue number if applicable
+
+#### Branch Strategy:
+- `main` - production-ready code
+- `develop` - integration branch
+- `feature/*` - new features
+- `fix/*` - bug fixes
+- `docs/*` - documentation updates
+
+### 9. Accessibility (A11y)
+- WCAG 2.1 Level AA compliance
+- Semantic HTML5 elements
+- ARIA labels where needed
+- Keyboard navigation support
+- Screen reader compatibility
+- Proper color contrast ratios
+
+### 10. Content Standards
+
+#### Writing Style:
+- Clear, concise, and professional
+- Active voice preferred
+- Technical accuracy is paramount
+- Include examples for complex concepts
+
+#### Code Examples:
+- Fully working, tested code
+- Include comments explaining key concepts
+- Follow project coding standards
+- Provide both Python and JavaScript examples where applicable
+
+## Non-Negotiables
+
+1. **Mistral AI** must be used for all LLM functionality (NOT OpenAI)
+2. **Spec-Kit Plus** must be used for development workflow
+3. All features must work offline-first (with degraded functionality)
+4. No plagiarism - all content must be original or properly cited
+5. Mobile-first responsive design
+6. Zero tolerance for security vulnerabilities
+7. Full compliance with data privacy regulations (GDPR, etc.)
+
+## Success Metrics
+
+### Technical Metrics:
+- All automated tests passing
+- Lighthouse score > 90 (Performance, Accessibility, Best Practices, SEO)
+- Zero console errors or warnings in production
+- API uptime > 99.5%
+
+### User Experience Metrics:
+- RAG chatbot accuracy > 85%
+- User can complete authentication flow < 2 minutes
+- Content personalization reflects user background
+- Translation maintains technical accuracy
+
+### Project Metrics:
+- All 17 chapters completed and published
+- All 4 modules fully documented
+- RAG chatbot answers questions from all chapters
+- At least 3 bonus features implemented
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+### Decision Making:
+- Architectural decisions documented in ADRs
+- Breaking changes require review
+- Performance regressions not accepted
+- Security issues have highest priority
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+### Review Process:
+- All code changes must be tested
+- Breaking changes documented
+- Migrations tested with rollback plans
+
+## Evolution
+
+This constitution is a living document. Updates should be:
+- Proposed with clear rationale
+- Discussed with stakeholders
+- Documented with version history
+- Reflected in all relevant documentation
+
+---
+
+**Version:** 1.0  
+**Last Updated:** 2025-12-14  
+**Owner:** Project Team

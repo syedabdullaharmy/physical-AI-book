@@ -1,0 +1,270 @@
+.chapterToolbar {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--ifm-color-emphasis-200);
+    padding-bottom: 1.5rem;
+}
+
+.toolbarContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.toolbarTitle h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.toolbarActions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.toolbarButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    color: var(--ifm-color-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.toolbarButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.toolbarButton:hover::before {
+    left: 100%;
+}
+
+.toolbarButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+    border-color: var(--ifm-color-primary);
+}
+
+.toolbarButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.toolbarButton.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+}
+
+.translateButton {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+    color: #059669;
+}
+
+.translateButton:hover {
+    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
+    border-color: #10b981;
+}
+
+.translateButton.active {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border-color: #10b981;
+}
+
+.personalizeButton {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(217, 119, 6, 0.1) 100%);
+    color: #d97706;
+}
+
+.personalizeButton:hover {
+    box-shadow: 0 8px 16px rgba(245, 158, 11, 0.3);
+    border-color: #f59e0b;
+}
+
+.personalizeButton.active {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    border-color: #f59e0b;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+}
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.viewToggle {
+    display: flex;
+    gap: 0.25rem;
+    background: var(--ifm-color-emphasis-100);
+    padding: 0.25rem;
+    border-radius: 10px;
+}
+
+.toggleButton {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--ifm-color-emphasis-700);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggleButton:hover {
+    background: var(--ifm-color-emphasis-200);
+}
+
+.toggleButton.active {
+    background: white;
+    color: var(--ifm-color-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loginPrompt {
+    display: flex;
+    align-items: center;
+}
+
+.loginLink {
+    padding: 0.625rem 1.25rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.loginLink:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+    border-color: var(--ifm-color-primary);
+    text-decoration: none;
+    color: var(--ifm-color-primary);
+}
+
+.errorMessage {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(239, 68, 68, 0.1);
+    border-left: 4px solid #ef4444;
+    border-radius: 8px;
+    color: #dc2626;
+    font-size: 0.9rem;
+}
+
+.errorIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.alternativeContent {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--ifm-color-emphasis-100);
+    border-radius: 12px;
+    border: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.alternativeContent[dir="rtl"] {
+    text-align: right;
+    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+    line-height: 2;
+}
+
+/* Dark mode support */
+[data-theme='dark'] .toolbarButton {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+}
+
+[data-theme='dark'] .translateButton {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.2) 100%);
+}
+
+[data-theme='dark'] .personalizeButton {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.2) 100%);
+}
+
+[data-theme='dark'] .viewToggle {
+    background: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .toggleButton.active {
+    background: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .alternativeContent {
+    background: var(--ifm-color-emphasis-200);
+    border-color: var(--ifm-color-emphasis-300);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .toolbarContent {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toolbarActions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .toolbarButton {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .viewToggle {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
